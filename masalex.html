@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masalex - Chavetas Padronizadas e Especiais</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter (Moderna e Limpa) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        masalex: {
+                            primary: '#064e3b', // Emerald 900
+                            secondary: '#047857', // Emerald 700
+                            accent: '#10b981', // Emerald 500
+                            dark: '#111827', // Gray 900
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Efeito de vidro no menu */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        /* Padrão de fundo sutil para seções técnicas */
+        .bg-grid-pattern {
+            background-image: radial-gradient(#064e3b 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased selection:bg-masalex-primary selection:text-white">
+
+    <!-- Top Bar (Informações Rápidas - Toque Premium) -->
+    <div class="bg-masalex-dark text-gray-300 text-xs py-2 border-b border-gray-800">
+        <div class="container mx-auto px-6 flex justify-between items-center flex-col md:flex-row">
+            <div class="flex space-x-4">
+                <span><i class="fas fa-phone-alt mr-2 text-masalex-accent"></i>+55 11 2724-7422 / 2724-8441</span>
+                <span class="hidden md:inline">|</span>
+                <span class="hidden md:inline"><i class="fas fa-envelope mr-2 text-masalex-accent"></i>vendas@masalex.com.br</span>
+            </div>
+            <div class="mt-2 md:mt-0">
+                <i class="far fa-clock mr-2 text-masalex-accent"></i>Seg-Sex: 08:00-17:00
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo Area -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Logo Placeholder - Substitua pelo arquivo real -->
+                <div class="w-12 h-12 bg-masalex-primary rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg group-hover:bg-masalex-secondary transition">
+                    M
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-bold text-masalex-primary tracking-tight">MASALEX</span>
+                    <span class="text-xs text-gray-500 font-medium tracking-widest uppercase">Chavetas</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-600">
+                <a href="#institucional" class="hover:text-masalex-primary transition-colors">Institucional</a>
+                <a href="#chavetas" class="hover:text-masalex-primary transition-colors">Chavetas</a>
+                <a href="#normas" class="hover:text-masalex-primary transition-colors">Normas</a>
+                <a href="#clientes" class="hover:text-masalex-primary transition-colors">Clientes</a>
+                <a href="#localizacao" class="bg-masalex-primary text-white px-5 py-2.5 rounded-full hover:bg-masalex-secondary transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    Localização
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-masalex-primary text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <a href="#institucional" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">Institucional</a>
+            <a href="#chavetas" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">Chavetas</a>
+            <a href="#normas" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">Normas</a>
+            <a href="#clientes" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">Clientes</a>
+            <a href="#localizacao" class="block px-6 py-3 text-masalex-primary font-bold hover:bg-gray-50">Contato / Localização</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1565439305022-4510f4794b8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Indústria Metalúrgica" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/90 to-black/50"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
+            <div class="max-w-3xl">
+                <span class="inline-block py-1 px-3 rounded-full bg-masalex-accent/20 text-masalex-accent text-sm font-semibold mb-6 border border-masalex-accent/30 backdrop-blur-sm animate-fade-in">
+                    MASALEX INDÚSTRIA
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight shadow-sm">
+                    Chavetas <span class="text-masalex-accent">Padronizadas</span> e <br> Especiais
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 font-light leading-relaxed">
+                    Mais de 56 anos de excelência. Desde 1968 fabricando chavetas para máquinas e motores industriais com precisão e qualidade.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <a href="#quem-somos" class="bg-masalex-primary hover:bg-masalex-secondary text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center">
+                        Quem Somos
+                    </a>
+                    <a href="#historia" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-lg font-semibold transition-all text-center">
+                        Nossa História
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institucional Section -->
+    <section id="institucional" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-sm font-bold text-masalex-primary uppercase tracking-widest mb-2">Sobre Nós</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Precisão e Confiabilidade Industrial</h3>
+                    <div class="prose prose-lg text-gray-600">
+                        <p class="mb-4">
+                            Responsabilidade utilizado para transmitir o torque em elementos mecânicos.
+                        </p>
+                        <p class="mb-4">
+                            Desenvolvemos nossas máquinas, ferramentas e dispositivos e nos empenhamos com objetivo de produzir peças com alto grau de confiabilidade a preços compatíveis.
+                        </p>
+                        <p class="mb-4 border-l-4 border-masalex-primary pl-4 italic text-gray-800">
+                            Hoje a MASALEX conta com equipamentos de concepção distinta na fabricação de chavetas, disponibilizadas em diversos materiais, tais como: aço carbono C1045, aço INOX 304, 316, 420 e Duplex, em estado natural ou ainda tratadas termicamente, todas fabricadas conforme normas ou especificação do cliente.
+                        </p>
+                        <p>
+                            O resultado dessa dedicação foi a criação de uma empresa próspera, sólida e de grande destaque no mercado, que é revelado pela satisfação e confiança de milhares de clientes, atendidos ao longo de mais de 5 décadas.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-masalex-primary/10 rounded-full blur-xl"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-masalex-accent/10 rounded-full blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1622544633758-236c87a2b908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Peças de metal precisão" class="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[500px]">
+                </div>
+            </div>
+
+            <!-- Missão, Visão, Valores Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mt-20">
+                <!-- Missão -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-masalex-primary group-hover:text-white transition-colors text-masalex-primary text-2xl">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">MISSÃO</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Fornecer produtos com qualidade e agilidade, superando prazos e desafios, baseada no trabalho em equipe e na busca continuada da excelência profissional.
+                    </p>
+                </div>
+
+                <!-- Visão -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-masalex-primary group-hover:text-white transition-colors text-masalex-primary text-2xl">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">VISÃO</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Ser referência no seguimento de chavetas e aumentar continuamente a participação no mercado, tendo como princípio a satisfação de nossos clientes.
+                    </p>
+                </div>
+
+                <!-- Valores -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-masalex-primary group-hover:text-white transition-colors text-masalex-primary text-2xl">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">VALORES</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Satisfação dos nossos Clientes, Tradição e Qualidade, Comprometimento, Ética, Transparência e Credibilidade.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chavetas (Produtos) Section -->
+    <section id="chavetas" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-masalex-primary uppercase tracking-widest mb-2">Nossos Produtos</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Chavetas Padronizadas e Especiais</h3>
+                <p class="text-gray-500 mt-4">Qualidade certificada para as mais diversas aplicações industriais.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1535609946170-254b654e033a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">DIN 6885 Tipo A</h4>
+                        <p class="text-sm text-gray-500">Chavetas paralelas</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                         <img src="https://images.unsplash.com/photo-1616347863977-62f6837407cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                         <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">DIN 6885 Tipo AB</h4>
+                        <p class="text-sm text-gray-500">Chavetas paralelas</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589792923962-537704632910?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">DIN 6885 Tipo B</h4>
+                        <p class="text-sm text-gray-500">Chavetas paralelas</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-masalex-primary flex items-center justify-center text-white relative overflow-hidden">
+                        <i class="fas fa-shield-alt text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Chavetas em Aço Inox</h4>
+                        <p class="text-sm text-gray-500">304, 316, 420 e Duplex</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                        <div class="text-gray-400 text-center">
+                            <i class="fas fa-cogs text-4xl mb-2"></i><br>Imagem do Produto
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">DIN 6887</h4>
+                        <p class="text-sm text-gray-500">Chavetas com Cabeça</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                         <div class="text-gray-400 text-center">
+                            <i class="fas fa-moon text-4xl mb-2"></i><br>Imagem do Produto
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Chavetas Meia Lua</h4>
+                        <p class="text-sm text-gray-500">Woodruff</p>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                         <div class="text-gray-400 text-center">
+                            <i class="fas fa-star text-4xl mb-2"></i><br>Imagem do Produto
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Chavetas Especiais</h4>
+                        <p class="text-sm text-gray-500">Desenvolvimento sob medida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Normas Section -->
+    <section id="normas" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-200 pb-4">
+                <div>
+                    <h2 class="text-sm font-bold text-masalex-primary uppercase tracking-widest mb-2">Especificações</h2>
+                    <h3 class="text-3xl font-bold text-gray-900">Normas Técnicas</h3>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Norma Item -->
+                <a href="#" class="flex items-center p-4 border rounded-lg hover:border-masalex-primary hover:bg-green-50 transition group">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4">
+                        <i class="fas fa-file-pdf text-xl"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-900">ABNT/NBR 6375</h5>
+                        <p class="text-sm text-gray-500 group-hover:text-masalex-primary">Chavetas paralelas</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center p-4 border rounded-lg hover:border-masalex-primary hover:bg-green-50 transition group">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4">
+                        <i class="fas fa-file-pdf text-xl"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-900">DIN 6885</h5>
+                        <p class="text-sm text-gray-500 group-hover:text-masalex-primary">Chavetas paralelas</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center p-4 border rounded-lg hover:border-masalex-primary hover:bg-green-50 transition group">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4">
+                        <i class="fas fa-file-pdf text-xl"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-900">DIN 6886</h5>
+                        <p class="text-sm text-gray-500 group-hover:text-masalex-primary">Chavetas inclinadas</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center p-4 border rounded-lg hover:border-masalex-primary hover:bg-green-50 transition group">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4">
+                        <i class="fas fa-file-pdf text-xl"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-900">DIN 6887</h5>
+                        <p class="text-sm text-gray-500 group-hover:text-masalex-primary">Chavetas com cabeça</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center p-4 border rounded-lg hover:border-masalex-primary hover:bg-green-50 transition group">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4">
+                        <i class="fas fa-file-pdf text-xl"></i>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-900">DIN 6888 / SAE J502</h5>
+                        <p class="text-sm text-gray-500 group-hover:text-masalex-primary">Chavetas Woodruff</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clientes Section -->
+    <section id="clientes" class="py-20 bg-masalex-dark text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Principais Clientes</h2>
+            
+            <!-- Logos Grid Placeholder (Premium Look: Monochrome to Color on Hover) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-80 mb-16">
+                <!-- Substituir estes textos/placeholders pelos logos reais -->
+                <div class="h-20 flex items-center justify-center bg-white/5 rounded hover:bg-white/10 transition cursor-pointer text-xl font-bold">Portobello</div>
+                <div class="h-20 flex items-center justify-center bg-white/5 rounded hover:bg-white/10 transition cursor-pointer text-xl font-bold">KSB</div>
+                <div class="h-20 flex items-center justify-center bg-white/5 rounded hover:bg-white/10 transition cursor-pointer text-xl font-bold">OMEL</div>
+                <div class="h-20 flex items-center justify-center bg-white/5 rounded hover:bg-white/10 transition cursor-pointer text-xl font-bold">Johnson & Johnson</div>
+                <div class="h-20 flex items-center justify-center bg-white/5 rounded hover:bg-white/10 transition cursor-pointer text-xl font-bold">Franklin Electric</div>
+                <div class="h-20 flex items-center justify-center bg-white/5 rounded hover:bg-white/10 transition cursor-pointer text-xl font-bold">Toledo do Brasil</div>
+                <div class="h-20 flex items-center justify-center bg-white/5 rounded hover:bg-white/10 transition cursor-pointer text-xl font-bold">IR Ingersoll Rand</div>
+                <div class="h-20 flex items-center justify-center bg-white/5 rounded hover:bg-white/10 transition cursor-pointer text-xl font-bold">Hercules Motores</div>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg text-gray-400 leading-relaxed">
+                    "Há mais de 56 anos temos o privilégio de atender e desenvolver parcerias duradouras com as principais empresas do setor industrial. Reconhecida pela produção de chavetas de altíssima confiabilidade, a Masalex reforça seu compromisso com os clientes ao desenvolver soluções que fortalecem a confiança e impulsionam o desempenho em cada projeto."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Localização -->
+    <footer id="localizacao" class="bg-black text-white pt-20 pb-10 border-t border-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <!-- Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8">
+                         <div class="w-10 h-10 bg-masalex-primary rounded-full flex items-center justify-center text-white font-bold">M</div>
+                         <span class="text-2xl font-bold tracking-tight">MASALEX</span>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-masalex-accent font-bold mb-2 uppercase text-sm tracking-wider">Endereço</h4>
+                            <p class="text-gray-400">Rua Júlio Parigot 495/515 - Vila Antonieta</p>
+                            <p class="text-gray-400">São Paulo - SP</p>
+                            <p class="text-gray-400">Cep: 03478-007</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-masalex-accent font-bold mb-2 uppercase text-sm tracking-wider">Contatos</h4>
+                            <p class="text-gray-400 hover:text-white transition"><i class="fas fa-phone-alt w-6"></i>+55 11 2724-7422 / 2724-8441</p>
+                            <p class="text-gray-400 hover:text-white transition"><i class="fas fa-envelope w-6"></i>vendas@masalex.com.br</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-masalex-accent font-bold mb-2 uppercase text-sm tracking-wider">Horário de Funcionamento</h4>
+                            <p class="text-gray-400">Segunda a Sexta: 08:00-17:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden h-[400px] relative">
+                    <!-- Iframe Placeholder para o Mapa -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.562736287797!2d-46.52037028502238!3d-23.57802078467459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5d8d3441c34f%3A0x7b879302094410e9!2sR.%20J%C3%BAlio%20Parigot%2C%20495%20-%20Vila%20Antonieta%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003478-007!5e0!3m2!1spt-BR!2sbr!4v1625000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: grayscale(100%) contrast(1.2) opacity(0.8);" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    <div class="absolute top-4 right-4 bg-white text-black px-4 py-2 rounded shadow font-bold text-sm pointer-events-none">
+                        Vila Antonieta, SP
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-900 pt-8 text-center text-gray-600 text-sm">
+                <p>&copy; 2025 MASALEX. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
