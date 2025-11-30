@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria Nutricional JC | Stefany Fonseca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#F5F5F0', // Areia claro
+                            DEFAULT: '#7C8C74', // Verde Sálvia
+                            dark: '#2C3E30', // Verde Escuro Profundo
+                            gold: '#C5A059', // Dourado fosco
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Otimização para telas de toque */
+        .touch-target {
+            min-height: 48px;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-gray-800 font-sans antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- Navbar (Mobile Optimized) -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-stone-100 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <img src="Fotos/Logo.png" alt="JC Nutrição" class="h-14 md:h-16 w-auto object-contain">
+                </div>
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#sobre" class="text-gray-600 hover:text-brand-dark transition text-sm tracking-wide">SOBRE</a>
+                    <a href="#como-funciona" class="text-gray-600 hover:text-brand-dark transition text-sm tracking-wide">MÉTODO</a>
+                    <a href="#planos" class="text-gray-600 hover:text-brand-dark transition text-sm tracking-wide">PLANOS</a>
+                    <a href="#contato" class="bg-brand-dark text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-gold transition duration-300 shadow-lg transform hover:-translate-y-0.5">Começar Agora</a>
+                </div>
+                <!-- Botão Mobile Simples -->
+                <div class="md:hidden">
+                    <a href="#planos" class="text-xs font-bold bg-brand-dark text-white px-4 py-2 rounded-full uppercase tracking-wide">Começar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-28 pb-16 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="fade-in-up delay-100">
+                <span class="inline-block py-1 px-3 rounded-full bg-brand-gold/10 text-brand-gold font-semibold tracking-widest text-xs mb-4 uppercase">Consultoria Nutricional Online</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-dark leading-tight mb-6">
+                    Comece sua <br>
+                    <span class="italic text-brand-DEFAULT">Consultoria Nutricional</span> hoje
+                </h1>
+                <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+                    <strong class="block mb-2 text-brand-dark">Medo de investir em um acompanhamento nutricional e acabar desistindo?</strong>
+                    A Consultoria JC é a solução perfeita para quem quer começar com segurança: acessível, personalizada e feita para o seu ritmo — mesmo que você ainda esteja cheia de dúvidas.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#planos" class="touch-target w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-brand-dark hover:bg-brand-gold transition duration-300 shadow-lg hover:shadow-xl transform active:scale-95">
+                        Quero começar agora
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Background Element -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-DEFAULT/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-72 h-72 bg-brand-gold/10 rounded-full blur-3xl"></div>
+    </header>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-16 md:py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-4xl font-serif font-bold text-brand-dark mb-6 fade-in-up">O que é a Consultoria Nutricional JC?</h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-12 fade-in-up delay-75">A consultoria JC foi feita especialmente para você que…</p>
+            
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+                <div class="bg-brand-light p-6 md:p-8 rounded-2xl border border-stone-200 fade-in-up">
+                    <div class="w-10 h-10 bg-brand-dark rounded-full flex items-center justify-center text-white mb-4 font-serif font-bold">1</div>
+                    <p class="text-gray-700 font-medium leading-relaxed text-sm md:text-base">Quer começar, mas tem medo de investir e não conseguir seguir.</p>
+                </div>
+                <div class="bg-brand-light p-6 md:p-8 rounded-2xl border border-stone-200 fade-in-up delay-100">
+                    <div class="w-10 h-10 bg-brand-dark rounded-full flex items-center justify-center text-white mb-4 font-serif font-bold">2</div>
+                    <p class="text-gray-700 font-medium leading-relaxed text-sm md:text-base">Já tentou várias dietas e sempre acaba desistindo.</p>
+                </div>
+                <div class="bg-brand-light p-6 md:p-8 rounded-2xl border border-stone-200 fade-in-up delay-200">
+                    <div class="w-10 h-10 bg-brand-dark rounded-full flex items-center justify-center text-white mb-4 font-serif font-bold">3</div>
+                    <p class="text-gray-700 font-medium leading-relaxed text-sm md:text-base">Acha acompanhamento nutricional caro ou distante da sua realidade.</p>
+                </div>
+                 <div class="bg-brand-light p-6 md:p-8 rounded-2xl border border-stone-200 fade-in-up">
+                    <div class="w-10 h-10 bg-brand-dark rounded-full flex items-center justify-center text-white mb-4 font-serif font-bold">4</div>
+                    <p class="text-gray-700 font-medium leading-relaxed text-sm md:text-base">Tem rotina corrida e precisa de algo simples, flexível e possível.</p>
+                </div>
+                <div class="bg-brand-light p-6 md:p-8 rounded-2xl border border-stone-200 fade-in-up delay-100">
+                    <div class="w-10 h-10 bg-brand-dark rounded-full flex items-center justify-center text-white mb-4 font-serif font-bold">5</div>
+                    <p class="text-gray-700 font-medium leading-relaxed text-sm md:text-base">Quer aprender a comer bem sem restrições impossíveis.</p>
+                </div>
+                <div class="bg-brand-light p-6 md:p-8 rounded-2xl border border-stone-200 fade-in-up delay-200">
+                    <div class="w-10 h-10 bg-brand-dark rounded-full flex items-center justify-center text-white mb-4 font-serif font-bold">6</div>
+                    <p class="text-gray-700 font-medium leading-relaxed text-sm md:text-base">Prefere dar um primeiro passo mais leve antes de assumir algo maior.</p>
+                </div>
+            </div>
+
+            <div class="mt-10 md:mt-12 fade-in-up">
+                <p class="text-lg md:text-xl text-brand-dark font-serif italic mb-8 px-4">
+                    "O foco aqui é entregar um acompanhamento que se encaixa na sua rotina, respeita suas preferências e entrega resultados possíveis."
+                </p>
+                <a href="#planos" class="inline-block border-b-2 border-brand-gold text-brand-dark font-bold hover:text-brand-gold transition pb-1">
+                    Quero mudar de vez!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutritionist Bio -->
+    <section class="py-16 md:py-20 bg-stone-50 border-y border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="relative fade-in-up px-4 md:px-0">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden shadow-xl relative">
+                         <!-- Imagem Nutricionista -->
+                        <img src="Fotos/Ste.jpg" alt="Stefany Fonseca Nutricionista" class="object-cover w-full h-full">
+                    </div>
+                    <div class="absolute bottom-4 left-6 right-6 bg-white/95 backdrop-blur-md p-4 rounded-lg shadow-md text-center border border-stone-100">
+                        <h3 class="font-serif text-lg md:text-xl font-bold text-brand-dark">Stefany Fonseca</h3>
+                        <p class="text-[10px] md:text-xs text-brand-gold uppercase tracking-wider mt-1">Nutricionista Clínica Integrada Juliana Catapano</p>
+                    </div>
+                </div>
+                <div class="fade-in-up delay-100 text-center md:text-left">
+                    <h2 class="text-2xl md:text-4xl font-serif font-bold text-brand-dark mb-6">Você vai ser acompanhada por Nutricionista o tempo todo</h2>
+                    <div class="space-y-6 text-gray-600 leading-relaxed text-sm md:text-base px-2 md:px-0">
+                       
+                        <p>
+                            "Minha missão é ajudar você a finalmente se sentir livre da relação difícil com a comida."
+                        </p>
+                        <p>
+                            "Com estratégia, vamos juntas construir um plano que cabe no seu dia, no seu trabalho, na sua rotina."
+                        </p>
+                        <p class="font-medium text-brand-dark text-lg">
+                            "Sem julgamentos, sem ‘certo ou errado’ rígido — só parceria, respeito e compromisso com o que funciona pra você."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Steps -->
+    <section id="como-funciona" class="py-16 md:py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-2xl md:text-4xl font-serif font-bold text-brand-dark">Como a Consultoria funciona na prática</h2>
+            </div>
+
+            <div class="space-y-6 md:space-y-8">
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start p-6 rounded-2xl bg-stone-50 border border-stone-100 fade-in-up">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center text-xl md:text-2xl font-serif font-bold">01</div>
+                    <div class="text-center md:text-left w-full">
+                        <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-2">Questionário completo</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Você preenche um formulário detalhado sobre sua rotina, preferências e objetivos para que eu possa te conhecer melhor.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start p-6 rounded-2xl bg-stone-50 border border-stone-100 fade-in-up">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center text-xl md:text-2xl font-serif font-bold">02</div>
+                    <div class="text-center md:text-left w-full">
+                        <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-2">Avaliação corporal online</h3>
+                        <p class="text-gray-600 text-sm md:text-base mb-6">Realizamos sua avaliação completa através da plataforma Shaped, de forma prática e segura.</p>
+                        
+                        <!-- Imagem Ilustrativa da Avaliação -->
+                        <div class="relative rounded-xl overflow-hidden border border-stone-200 shadow-sm mx-auto md:mx-0 max-w-2xl bg-white">
+                            <img src="Fotos/Avaliação física online.png" alt="Exemplo de Avaliação Corporal e Gráficos da Plataforma Shaped" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start p-6 rounded-2xl bg-stone-50 border border-stone-100 fade-in-up">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center text-xl md:text-2xl font-serif font-bold">03</div>
+                    <div class="text-center md:text-left w-full">
+                        <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-2">Plano alimentar personalizado</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Você recebe seu plano totalmente individualizado através do WebDiet, adaptado à sua rotina.</p>
+                    </div>
+                </div>
+
+                 <!-- Step 4 -->
+                 <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start p-6 rounded-2xl bg-stone-50 border border-stone-100 fade-in-up">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center text-xl md:text-2xl font-serif font-bold">04</div>
+                    <div class="text-center md:text-left w-full">
+                        <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-2">Acompanhamento do diário</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Suporte via chat para tirar dúvidas e ajustes conforme sua rotina evolui.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start p-6 rounded-2xl bg-stone-50 border border-stone-100 fade-in-up">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center text-xl md:text-2xl font-serif font-bold">05</div>
+                    <div class="text-center md:text-left w-full">
+                        <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-2">Bate-papo exclusivo!</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Momento online comigo para alinharmos estratégias e você tirar todas as dúvidas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 fade-in-up">
+                 <a href="#planos" class="w-full md:w-auto inline-flex justify-center items-center px-8 py-4 border border-brand-dark text-brand-dark font-bold rounded-full hover:bg-brand-dark hover:text-white transition duration-300 touch-target">
+                    Quero começar minha consultoria!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Carousel Style on Mobile) -->
+    <section class="py-16 md:py-20 bg-brand-dark text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-4xl font-serif font-bold text-center mb-12 fade-in-up">O que minhas pacientes dizem</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/20 fade-in-up">
+                    <img src="Fotos/Feedback 2.jpeg" alt="Depoimento de paciente" class="w-full h-auto rounded-lg">
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/20 fade-in-up delay-100">
+                    <img src="Fotos/Feedback 1.jpeg" alt="Depoimento de paciente" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience -->
+    <section class="py-16 md:py-20 bg-brand-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-up order-2 lg:order-1">
+                    <h2 class="text-2xl md:text-4xl font-serif font-bold text-brand-dark mb-8 text-center lg:text-left">Para quem é a Consultoria?</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 bg-white p-3 rounded-lg shadow-sm">
+                            <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Tem receio de investir em um acompanhamento completo e prefere um início mais acessível.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-3 rounded-lg shadow-sm">
+                            <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Tem medo de falhar, desistir no meio ou não “dar conta” de seguir o plano.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-3 rounded-lg shadow-sm">
+                            <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Já tentou várias vezes sozinha, mas não conseguiu manter resultados.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-3 rounded-lg shadow-sm">
+                            <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Tem rotina corrida e precisa de algo simples, flexível e possível.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-3 rounded-lg shadow-sm">
+                            <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Quer aprender a comer bem, sem culpa, sem restrições difíceis e sem pressão.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-3 rounded-lg shadow-sm">
+                            <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Deseja um acompanhamento profissional, mas sem compromisso pesado, sem cobrança excessiva e sem julgamento.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-3 rounded-lg shadow-sm">
+                            <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Quer sentir segurança antes de dar um passo maior — como um acompanhamento nutricional completo.</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 text-center lg:text-left">
+                        <a href="#planos" class="inline-flex justify-center items-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-brand-dark hover:bg-brand-gold transition duration-300 shadow-md hover:shadow-lg transform active:scale-95 touch-target">
+                            Quero começar minha mudança agora!
+                        </a>
+                    </div>
+                </div>
+                <div class="relative fade-in-up order-1 lg:order-2">
+                     <!-- Imagem Contexto -->
+                    <div class="aspect-video rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mulher trabalhando no computador" class="object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+             <h2 class="text-2xl md:text-4xl font-serif font-bold text-center text-brand-dark mb-12 fade-in-up">O que você recebe ao entrar</h2>
+             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Item 1 -->
+                <div class="p-6 border border-stone-100 rounded-xl hover:shadow-lg transition bg-stone-50 fade-in-up">
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2">Plano alimentar personalizado</h3>
+                    <p class="text-gray-600 text-sm">Totalmente adaptado à sua rotina, preferências e objetivos, entregue via plataforma WebDiet.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="p-6 border border-stone-100 rounded-xl hover:shadow-lg transition bg-stone-50 fade-in-up delay-100">
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2">Avaliação corporal completa</h3>
+                    <p class="text-gray-600 text-sm">Análise detalhada através da plataforma Shaped para acompanhar sua evolução.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="p-6 border border-stone-100 rounded-xl hover:shadow-lg transition bg-stone-50 fade-in-up delay-200">
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2">Acesso ao WebDiet</h3>
+                    <p class="text-gray-600 text-sm">Plataforma completa para acessar seu plano, registrar refeições e acompanhar progresso.</p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="p-6 border border-stone-100 rounded-xl hover:shadow-lg transition bg-stone-50 fade-in-up">
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2">Suporte via chat</h3>
+                    <p class="text-gray-600 text-sm">Tire dúvidas, receba orientações e ajustes sempre que precisar durante todo o acompanhamento.</p>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="p-6 border border-stone-100 rounded-xl hover:shadow-lg transition bg-stone-50 fade-in-up delay-100">
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2">Bate-papo exclusivo online</h3>
+                    <p class="text-gray-600 text-sm">Momento individual comigo para conversarmos sobre suas dúvidas e estratégias.</p>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="p-6 border border-stone-100 rounded-xl hover:shadow-lg transition bg-stone-50 fade-in-up delay-200">
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2">Diário alimentar</h3>
+                    <p class="text-gray-600 text-sm">Acompanhamento do seu dia a dia alimentar para ajustes precisos e resultados consistentes.</p>
+                </div>
+
+             </div>
+        </div>
+    </section>
+
+    <!-- Clinic Info (FIXED IMAGE) -->
+    <section id="clinica" class="py-16 md:py-20 bg-brand-dark text-white relative overflow-hidden">
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 fade-in-up">
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold mb-6 text-brand-gold">Clínica Integrada Juliana Catapano</h2>
+                    <div class="space-y-4 opacity-90 text-base leading-relaxed font-light">
+                        <p>
+                            A Clínica Integrada Juliana Catapano é um espaço de cuidado multidisciplinar, onde acreditamos que saúde vai muito além de números. Nossa abordagem é integrativa, humanizada e focada no seu estilo de vida como um todo.
+                        </p>
+                        <p>
+                            Trabalhamos com acolhimento genuíno, profissionalismo e respeito pela individualidade de cada paciente. Aqui você encontra um time preparado para cuidar de você de forma completa, com atenção, empatia e excelência técnica.
+                        </p>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 fade-in-up delay-100">
+                     <!-- Imagem Substituta de Alta Qualidade (Previne erro de carregamento) -->
+                    <div class="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl border border-white/10">
+                        <img src="Fotos/clinica.jpg" alt="Interior da Clínica Integrada" class="object-cover w-full h-full hover:scale-110 transition duration-700">
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section id="planos" class="py-20 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center text-brand-dark mb-4 fade-in-up">Escolha o melhor plano</h2>
+            <p class="text-center text-gray-600 mb-12 fade-in-up">Invista na sua saúde e bem-estar</p>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Plan 2 Months -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-stone-100 fade-in-up flex flex-col">
+                    <div class="p-6 md:p-8 flex-grow">
+                        <h3 class="text-2xl font-serif font-bold text-brand-dark mb-6">Plano 2 Meses</h3>
+                        <ul class="space-y-3 text-sm md:text-base mb-6">
+                            <li class="flex items-start gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                1 plano alimentar individualizado
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                1 avaliação corporal completa
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                1 bate-papo online em até 45 dias
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Acompanhamento do diário alimentar
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-brand-light p-6 md:p-8 border-t border-stone-100 text-center mt-auto">
+                        <div class="text-3xl font-bold text-brand-dark mb-1">2x R$125,00</div>
+                        <button class="touch-target mt-4 w-full bg-brand-dark text-white font-medium py-3 rounded-lg hover:bg-brand-gold transition shadow-lg">Quero este plano</button>
+                    </div>
+                </div>
+
+                <!-- Plan 4 Months -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-brand-gold/20 relative fade-in-up delay-100 flex flex-col">
+                    <div class="absolute top-0 right-0 bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">Mais Popular</div>
+                    <div class="p-6 md:p-8 flex-grow">
+                        <h3 class="text-2xl font-serif font-bold text-brand-dark mb-6">Plano 4 Meses</h3>
+                        <ul class="space-y-3 text-sm md:text-base mb-6">
+                            <li class="flex items-start gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                1 plano alimentar individualizado
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                2 avaliações corporais completas
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                2 bate-papos online em até 190 dias
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Acompanhamento do diário alimentar
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-brand-dark p-6 md:p-8 text-center text-white mt-auto">
+                        <div class="text-3xl font-bold text-brand-gold mb-1">4x R$112,50</div>
+                        <button class="touch-target mt-4 w-full bg-brand-gold text-brand-dark font-bold py-3 rounded-lg hover:bg-white hover:text-brand-dark transition shadow-lg">Quero este plano</button>
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center text-xs md:text-sm text-gray-500 mt-8">Pix ou cartão de crédito via link seguro</p>
+        </div>
+    </section>
+
+    <!-- Bonus Ebook -->
+    <section class="py-16 md:py-20 bg-white overflow-hidden border-b border-stone-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-4xl font-serif font-bold text-brand-dark mb-8 fade-in-up">
+                Bônus Exclusivo
+            </h2>
+            <p class="text-base md:text-lg text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto fade-in-up delay-75">
+                Ao garantir sua vaga, você ganha um presente especial: um <strong class="text-brand-DEFAULT">e-book exclusivo</strong> com o passo a passo para iniciar sua jornada de alimentação saudável. E tem mais! O material inclui receitas práticas e deliciosas para você variar o cardápio sem cair na monotonia.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center justify-center max-w-3xl mx-auto fade-in-up delay-100">
+                 <!-- Imagens do Ebook -->
+                 <div class="rounded-xl overflow-hidden shadow-lg border border-stone-100 transform hover:scale-105 transition duration-500 bg-stone-50 h-96 flex items-center justify-center">
+                    <img src="Fotos/CapaEbook.png" alt="Capa do Ebook Primeiros Passos" class="w-auto h-full object-contain">
+                 </div>
+                 <div class="rounded-xl overflow-hidden shadow-lg border border-stone-100 transform hover:scale-105 transition duration-500 bg-stone-50 h-96 flex items-center justify-center">
+                    <img src="Fotos/ReceitaEbook.png" alt="Receita de Bolo de Caneca" class="w-auto h-full object-contain">
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 md:py-20 bg-brand-light text-center">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-up">
+            <h2 class="text-2xl md:text-4xl font-serif font-bold text-brand-dark mb-6">Pronta para começar sua mudança?</h2>
+            <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
+                Eu vou caminhar com você com leveza, com estratégia e com muito cuidado. Porque você não precisa fazer isso sozinha.
+            </p>
+            <a href="#planos" class="touch-target w-full md:w-auto inline-flex justify-center items-center px-10 py-4 text-lg font-medium rounded-full text-white bg-brand-dark hover:bg-brand-gold transition duration-300 shadow-xl hover:shadow-2xl transform active:scale-95">
+                Quero começar agora!
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>&copy; 2023 Consultoria Nutricional JC. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
